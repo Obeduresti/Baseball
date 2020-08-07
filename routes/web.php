@@ -22,12 +22,17 @@ Route::get('/aboutus', function () {
 });
 
 //admin views
+//Allstar
 Route::get('/admin/AllStar', 'AllStarController@Index');
 
+//AwardPlayers
 Route::get('/admin/AwardPlayers', 'AwardPlayersController@Index');
 
+//Hall of fame
 Route::get('/admin/HallOfFame', 'HallOfFameController@Index');
 
+
+//Managers
 Route::get('/admin/Managers', 'ManagersController@Index');
 
 

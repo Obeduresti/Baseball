@@ -15,7 +15,4 @@ class AllStarController extends Controller
    }
 
 
-
-
-   
 }
