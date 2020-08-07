@@ -22,8 +22,8 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">playerID</th>
-                    <th scope="col">yearid</th>
-                    <th scope="col">votedBy</th>
+                    <th scope="col">yearID</th>
+                    <th scope="col">votedby</th>
                     <th scope="col">category</th>
                     <th scope="col" >Options</th>
                  </tr>
@@ -33,8 +33,8 @@
                  <tr>
                     <th scope="row">{{ $loop ->index + 1}}</th>
                     <td>{{$hof["playerID"]}}</td>
-                    <td>{{$hof["yearid"]}}</td>
-                    <td>{{$hof["votedBy"]}}</td>
+                    <td>{{$hof["yearID"]}}</td>
+                    <td>{{$hof["votedby"]}}</td>
                     <td>${{$hof["category"]}}</td>
                     <td>
                         <a href="/admin/HallOfFame/{{$hof['_id'] }}">Details</a> |

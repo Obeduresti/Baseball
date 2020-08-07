@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <h1>Player details</h1>
                 <div class="card">
-                <input type="hidden" name="productid" id="productid">
+                <input type="hidden" name="allstarid" id="allstarid">
                     <div class="card-body">
                         <h5 class="card-title">{{ $AllStar->playerID }}</h5>
                         <p class="card-text"> 

@@ -14,5 +14,4 @@ class AwardPlayersController extends Controller
         return view('Admin.AwardPlayers.index', [ "AwardPlayers" => $AwardPlayers ]);
    }
 
-
 }

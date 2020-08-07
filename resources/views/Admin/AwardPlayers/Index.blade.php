@@ -23,7 +23,6 @@
                     <th scope="col">#</th>
                     <th scope="col">playerID</th>
                     <th scope="col">awardID</th>
-                    <th scope="col">yearID</th>
                     <th scope="col">lgID</th>
                     <th scope="col" >Options</th>
                  </tr>
@@ -34,7 +33,6 @@
                     <th scope="row">{{ $loop ->index + 1}}</th>
                     <td>{{$awp["playerID"]}}</td>
                     <td>{{$awp["awardID"]}}</td>
-                    <td>{{$awp["yearID"]}}</td>
                     <td>{{$awp["lgID"]}}</td>
                     <td>
                         <a href="/admin/AwardPlayers/{{$awp['_id'] }}">Details</a> |
