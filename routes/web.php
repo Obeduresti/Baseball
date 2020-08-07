@@ -21,6 +21,11 @@ Route::get('/mongodb',function(){
     return view('mongodb');
 });
 
+//admin views
+Route::get('/admin/AllStar', 'AllStarController@Index');
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
