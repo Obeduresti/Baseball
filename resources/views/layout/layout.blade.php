@@ -24,7 +24,7 @@
         <a class="nav-link" href="/contactus">Contact us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/products">Products</a>
+        <a class="nav-link" href="/baseball">Baseball</a>
       </li>
     </ul>
   </div>
