@@ -17,14 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mongodb',function(){
-    return view('mongodb');
-});
+
 
 //admin views
 Route::get('/admin/AllStar', 'AllStarController@Index');
 
+Route::get('/admin/AwardPlayers', 'AwardPlayersController@Index');
 
+Route::get('/admin/HallOfFame', 'HallOfFameController@Index');
+
+Route::get('/admin/Managers', 'ManagersController@Index');
+
+
+
+Route::get('/mongodb',function(){
+    return view('mongodb');
+});
 
 Auth::routes();
 
