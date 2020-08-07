@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use MongoDB;
 
-class ManagerController extends Controller
+class ManagersController extends Controller
 {
     
    public function index(){
