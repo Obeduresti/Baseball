@@ -21,15 +21,13 @@
                         <p class="card-text"> 
                             <b>Year:</b>{{ $AllStar->yearID }}
                             <br>
+                            <b>league:</b>{{$AllStar->lgID}}
+                            <br>
+                            <b>Game:</b>${{$AllStar->gameID}}
                         </p>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <b>Game:</b>${{$AllStar->gameID}}
-                        </li>
-                    </ul>
                     <div class="card-body">
-                        <a href="/admin/AllStar/edit/{{$als->_id}" class="card-link">Edit</a>
+                        <a href="/admin/AllStar/edit/{{$als ->_id}" class="card-link">Edit</a>
                         <a href="/admin/AllStar/delete/{{$als->_id}" class="card-link">Delete</a>
                     </div>
                 </div>

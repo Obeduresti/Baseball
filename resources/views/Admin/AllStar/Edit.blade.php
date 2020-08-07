@@ -15,7 +15,17 @@
 
                     <div class="form-group">
                         <label for="yearID">Year</label>
-                        <textarea class="form-control" name="yearID" id="yearID" cols="30" rows="10" value="{{$AllStar->yearID}}"></textarea>
+                        <input type="text" class="form-control" name="yearID" id="yearID" value="{{$AllStar->yearID}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gameID">Game</label>
+                        <input type="text" class="form-control" name="gameID" id="gameID" value="{{$AllStar->gameID}}">
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="lgID">League</label>
+                        <input type="text" class="form-control" name="lgID" id="lgID" value="{{$AllStar->lgID}}">
                     </div>
                  
                     <button class="btn btn-primary"type="submit">edit</button>

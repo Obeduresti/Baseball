@@ -39,6 +39,7 @@ class AllStarController extends Controller
         "playerID" => request("playerID"),
         "yearID" => request("yearID"),
         "gameID" => request("gameID"),
+        "teamID" => request("teamID"),
         "lgID" => request("lgID"),
     ];
     $updateOneResult = $collection->updateOne([
@@ -69,6 +70,7 @@ class AllStarController extends Controller
         $AllStar = [
             "playerID" => request("playerID"),
             "yearID" => request("yearID"),
+            "gameID" => request("gameID"),
             "gameID" => request("gameID"),
             "lgID" => request("lgID"),
 
