@@ -31,9 +31,13 @@ Route::post('/admin/AllStar/create','AllStarController@Create');
 
 Route::get('/admin/AllStar/edit/{id}', 'AllStarController@Edit');
 
+Route::post('/admin/products/edit', 'ProductController@Update');
+
 Route::get('/admin/AllStar/{id}','AllStarController@Show');
 
 Route::get('/admin/AllStar/delete/{id}', 'AllStarController@Delete');
+
+Route::delete('/admin/AllStar/delete', 'AllStarController@Remove');
 
 //AwardPlayers
 Route::get('/admin/AwardPlayers', 'AwardPlayersController@Index');

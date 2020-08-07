@@ -13,6 +13,7 @@ class AllStarController extends Controller
         $AllStar = $collection->find();
         return view('Admin.AllStar.index', [ "AllStar" => $AllStar ]);
    }
+
     public function show($id){//Details
         $collection = (new MongoDB\Client)->Baseball->AllStar;
         $AllStar = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
@@ -26,18 +27,50 @@ class AllStarController extends Controller
         }
 
         public function Delete($id){
-        $collection = (new MongoDB\Client)->FiceCStore->Products;
-        $collection = (new MongoDB\Client)->FiceCStore->categories;
+        $collection = (new MongoDB\Client)->Baseball->AllStar;
         $collection = $collection->find();
-        $products = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
-            return view('Admin.Products.delete',[ "products" => $products, "categories"=> $categories ]);
+        $AllStar = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
+            return view('Admin.AllStar.delete',[ "AllStar" => $AllStar ]);
      }
+
+     public Function Remove(){
+        $collection = (new MongoDB\Client)->Baseball->AllStar;
+        $playerID= request('playerID');
+        $collection = $collection->deleteOne([
+            "_id" => new \MongoDB\BSON\ObjectId(request(""))
+        ]);
+        if($deleteOneResult-> getDeletedCount() == 1)
+        return redirect("/admin/AllStar")->with("msg",$playerID."Was delete succesfuly.")->with("alerttype", "success");
+       }
+
+
         public function edit($id){
-            $collection = (new MongoDB\Client)->FiceCStore->Products;
-            $collection = (new MongoDB\Client)->FiceCStore->categories;
+            $collection = (new MongoDB\Client)->Baseball->AllStar;
             $collection = $collection->find();
-            $products = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
-            return view('Admin.Products.edit',[ "products" => $products, "categories"=> $categories ]);
+            $AllStar = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
+            return view('Admin.AllStar.edit',[ "AllStar" => $AllStar ]);
         }
+
+        
+   public function Update() {
+    $collection = (new MongoDB\Client)->Baseball->AllStar;
+    $AllStar = [
+        "product_name" => request("product_name"),
+        "category_id" => request("category"),
+        "description" => request("description"),
+        "price" => request("price"),
+        "currency" => request("currency"),
+        "specification"=> [],
+        "rating"=>[],
+        "comments"=>[]
+    ];
+    $updateOneResult = $collection->updateOne([
+        "_id" => new \MongoDB\BSON\ObjectId(request("playerID"))
+    ],[
+        '$set' =>$AllStar
+    ]);
+    if($updateOneResult->getModifiedCount()== 1)
+    return redirect("/admin/AllStar/". request("playerID"))->with('msg',"Updated succesfuly.")->with("alerttype", "success");
+   }
 
 }

@@ -4,26 +4,18 @@
 <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Edit product</h1>
-                <form action="/admin/products/edit" method="POST"> 
+                <h1>Change player</h1>
+                <form action="/admin/AllStar/edit" method="POST"> 
                 @csrf
-                    <input type="hidden" name="productid" id="productid" value="{{$products->_id}}">
+                    <input type="hidden" name="playerID" id="playerID" value="{{$AllStar->_id}}">
                     <div class="form-group">
-                        <label for="product_name">Product Name</label>
-                        <input type="text" class="form-control" id="product_name" name="product_name" value="{{$products ->product_name}}">
+                        <label for="playerID">Player</label>
+                        <input type="text" class="form-control" id="playerID" name="playerID" value="{{$AllStar ->playerID}}">
                     </div>
+
                     <div class="form-group">
-                        <label for="category">Category</label>
-                        <select class="form-control" name="category" id="category">
-                            <option value="0">Select a category</option>  
-                            @foreach  ($categories as @category) 
-                            <option value="{{$category->_id}}"{{ $category ->_id} == $product ->category_id ? 'selected' : ''}>{{$category -> category}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{$products->description}}</textarea>
+                        <label for="yearID">Year</label>
+                        <textarea class="form-control" name="yearID" id="yearID" cols="30" rows="10">{{$AllStar->yearID}}</textarea>
                     </div>
                  
                     <button class="btn btn-primary"type="submit">edit</button>
