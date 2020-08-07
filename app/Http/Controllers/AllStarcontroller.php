@@ -26,27 +26,8 @@ class AllStarController extends Controller
         return view('Admin.AllStar.create',[ "AllStar"=> $AllStar ]);
         }
 
-        public function Delete($id){
-        $collection = (new MongoDB\Client)->Baseball->AllStar;
-        $collection = $collection->find();
-        $AllStar = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
-            return view('Admin.AllStar.delete',[ "AllStar" => $AllStar ]);
-     }
-
-     public Function Remove(){
-        $collection = (new MongoDB\Client)->Baseball->AllStar;
-        $playerID= request('playerID');
-        $collection = $collection->deleteOne([
-            "_id" => new \MongoDB\BSON\ObjectId(request(""))
-        ]);
-        if($deleteOneResult-> getDeletedCount() == 1)
-        return redirect("/admin/AllStar")->with("msg",$playerID."Was delete succesfuly.")->with("alerttype", "success");
-       }
-
-
         public function edit($id){
             $collection = (new MongoDB\Client)->Baseball->AllStar;
-            $collection = $collection->find();
             $AllStar = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
             return view('Admin.AllStar.edit',[ "AllStar" => $AllStar ]);
         }
@@ -55,22 +36,46 @@ class AllStarController extends Controller
    public function Update() {
     $collection = (new MongoDB\Client)->Baseball->AllStar;
     $AllStar = [
-        "product_name" => request("product_name"),
-        "category_id" => request("category"),
-        "description" => request("description"),
-        "price" => request("price"),
-        "currency" => request("currency"),
-        "specification"=> [],
-        "rating"=>[],
-        "comments"=>[]
+        "playerID" => request("playerID"),
+        "yearID" => request("yearID"),
+        "gameID" => request("gameID"),
+        "lgID" => request("lgID"),
     ];
     $updateOneResult = $collection->updateOne([
-        "_id" => new \MongoDB\BSON\ObjectId(request("playerID"))
+        "_id" => new \MongoDB\BSON\ObjectId(request("allstarid"))
     ],[
         '$set' =>$AllStar
     ]);
     if($updateOneResult->getModifiedCount()== 1)
-    return redirect("/admin/AllStar/". request("playerID"))->with('msg',"Updated succesfuly.")->with("alerttype", "success");
-   }
+    return redirect("/admin/AllStar/". request("allstarid"))->with('msg',"Updated succesfuly.")->with("alerttype", "success");
+   }  
+   
+   public function Delete($id){
+        $collection = (new MongoDB\Client)->Baseball->AllStar;
+        $AllStar = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
+            return view('admin/AllStar.delete',[ "AllStar" => $AllStar]);
+     }
 
+     public Function Remove(){
+        $collection = (new MongoDB\Client)->Baseball->AllStar;
+        $deleteOneResult = $collection->deleteOne([
+            "_id" => new \MongoDB\BSON\ObjectId(request("allstarid"))
+        ]);
+        if($deleteOneResult-> getDeletedCount() == 1)
+        return redirect("admin/AllStar/")->with("mssg", request('playerID')." was deleted succesfuly.!")->with("alerttype", "success");
+       }
+
+       public function store() {
+        $AllStar = [
+            "playerID" => request("playerID"),
+            "yearID" => request("yearID"),
+            "gameID" => request("gameID"),
+            "lgID" => request("lgID"),
+
+        ];
+        $collection = (new MongoDB\Client)->Baseball->AllStar;
+        $insertOneResult = $collection->insertOne($AllStar);
+        if ($insertOneResult->getInsertedCount() == 1)
+        return redirect('/admin/AllStar')->with('mssg', request('playerID')." was added succesfuly!")-> with('alerttype', "success");
+    }
 }

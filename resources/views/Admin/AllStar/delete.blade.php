@@ -7,16 +7,15 @@
                 <h1>Delete player</h1>
                 <form action="/admin/AllStar/delete" method="POST">
                 @csrf
-                @method('DELETE');
-                    <input type="hidden" name="playerID"id="playerID" value="{{$AllStar->_id}}">
+                @method("DELETE");
+                    <input type="hidden" name="allstarid"id="allstarid" value="{{$AllStar->_id}}">
                     <div class="form-group">
                         <label for="playerID">Player</label>
                         <input type="text" class="form-control" id="playerID" name="playerID" value="{{$AllStar->playerID}}" disable>
-                    </div>
-                   
+                    </div>             
                     <div class="form-group">
                         <label for="yearID">Year</label>
-                        <textarea class="form-control" name="yearID" id="yearID" cols="30" rows="10"disable>{{$AllStar->yearID}}</textarea>
+                        <textarea class="form-control" name="yearID" id="yearID" cols="30" rows="10" value="{{$AllStar->yearID}}"disable></textarea>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -45,7 +44,7 @@
                                 Are you sure you want to delete this AllStar? This changes can not be reverted.
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </div>
                             </div>

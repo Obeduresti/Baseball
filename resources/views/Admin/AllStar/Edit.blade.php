@@ -7,7 +7,7 @@
                 <h1>Change player</h1>
                 <form action="/admin/AllStar/edit" method="POST"> 
                 @csrf
-                    <input type="hidden" name="playerID" id="playerID" value="{{$AllStar->_id}}">
+                    <input type="hidden" name="allstarid" id="allstarid" value="{{$AllStar->_id}}">
                     <div class="form-group">
                         <label for="playerID">Player</label>
                         <input type="text" class="form-control" id="playerID" name="playerID" value="{{$AllStar ->playerID}}">
@@ -15,7 +15,7 @@
 
                     <div class="form-group">
                         <label for="yearID">Year</label>
-                        <textarea class="form-control" name="yearID" id="yearID" cols="30" rows="10">{{$AllStar->yearID}}</textarea>
+                        <textarea class="form-control" name="yearID" id="yearID" cols="30" rows="10" value="{{$AllStar->yearID}}"></textarea>
                     </div>
                  
                     <button class="btn btn-primary"type="submit">edit</button>

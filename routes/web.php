@@ -27,11 +27,11 @@ Route::get('/admin/AllStar', 'AllStarController@Index');
 
 Route::get('/admin/AllStar/create', 'AllStarController@create');
 
-Route::post('/admin/AllStar/create','AllStarController@Create');
+Route::post('/admin/AllStar/create','AllStarController@Store');
 
 Route::get('/admin/AllStar/edit/{id}', 'AllStarController@Edit');
 
-Route::post('/admin/products/edit', 'ProductController@Update');
+Route::post('/admin/AllStar/edit', 'AllStarController@Update');
 
 Route::get('/admin/AllStar/{id}','AllStarController@Show');
 

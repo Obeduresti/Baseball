@@ -24,7 +24,6 @@
                     <th scope="col">playerID</th>
                     <th scope="col">yearID</th>
                     <th scope="col">gameID</th>
-                    <th scope="col">teamID</th>
                     <th scope="col">lgID</th>
                     <th scope="col" >Options</th>
                  </tr>
@@ -33,15 +32,14 @@
                     @foreach($AllStar as $als)
                  <tr>
                     <th scope="row">{{ $loop ->index + 1}}</th>
-                    <td>{{$als["playerID"]}}</td>
-                    <td>{{$als["yearID"]}}</td>
-                    <td>{{$als["gameID"]}}</td>
-                    <td>${{$als["teamID"]}}</td>
-                    <td>{{$als["lgID"]}}</td>
+                    <td>{{ $als["playerID"] }}</td>
+                    <td>{{ $als["yearID"] }}</td>
+                    <td>{{ $als["gameID"] }}</td>
+                    <td>{{ $als["lgID"] }}</td>
                     <td>
                         <a href="/admin/AllStar/{{$als['_id'] }}">Details</a> |
-                        <a href="/admin/AllStar/edit/{{$als->_id}">Edit</a> |
-                        <a href="/admin/AllStar/delete/{{$als->_id}">Delete</a>
+                        <a href="/admin/AllStar/edit/{{ $als->_id }}">Edit</a> |
+                        <a href="/admin/AllStar/delete/{{$als->_id }}">Delete</a>
                     </td>
                     </tr>          
                     @endforeach

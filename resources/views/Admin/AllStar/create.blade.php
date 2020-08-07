@@ -21,13 +21,6 @@
                         <label for="gameID">Game</label>
                         <textarea class="form-control" name="gameID" id="gameID" cols="10" rows="1"></textarea>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="teamID">Team</label>
-                            <textarea class="form-control" name="teamID" id="teamID" cols="10" rows="1"></textarea>
-                        </div>         
-                    </div>
                     
                     <div class="form-group">
                         <label for="lgID">LG</label>

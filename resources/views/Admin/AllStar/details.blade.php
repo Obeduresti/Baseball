@@ -27,8 +27,6 @@
                         <li class="list-group-item">
                             <b>Game:</b>${{$AllStar->gameID}}
                         </li>
-                        <li class="list-group-item">
-                            <b>Team:</b>{{$AllStar->teamID}}</li>
                     </ul>
                     <div class="card-body">
                         <a href="/admin/AllStar/edit/{{$als->_id}" class="card-link">Edit</a>
