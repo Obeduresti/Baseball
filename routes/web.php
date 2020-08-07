@@ -25,6 +25,16 @@ Route::get('/aboutus', function () {
 //Allstar
 Route::get('/admin/AllStar', 'AllStarController@Index');
 
+Route::get('/admin/AllStar/create', 'AllStarController@create');
+
+Route::post('/admin/AllStar/create','AllStarController@Create');
+
+Route::get('/admin/AllStar/edit/{id}', 'AllStarController@Edit');
+
+Route::get('/admin/AllStar/{id}','AllStarController@Show');
+
+Route::get('/admin/AllStar/delete/{id}', 'AllStarController@Delete');
+
 //AwardPlayers
 Route::get('/admin/AwardPlayers', 'AwardPlayersController@Index');
 
