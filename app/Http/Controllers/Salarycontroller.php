@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use MongoDB;
 
-class ManagersController extends Controller
+class SalaryController extends Controller
 {
     
    public function index(){
@@ -13,6 +13,4 @@ class ManagersController extends Controller
         $Salary = $collection->find();
         return view('Admin.Salary.index', [ "Salary" => $Salary ]);
    }
-
-
 }

@@ -46,8 +46,8 @@ Route::get('/admin/AwardPlayers', 'AwardPlayersController@Index');
 Route::get('/admin/HallOfFame', 'HallOfFameController@Index');
 
 
-//Managers
-Route::get('/admin/Managers', 'ManagersController@Index');
+//Salary
+Route::get('/admin/Salary', 'SalaryController@Index');
 
 
 
