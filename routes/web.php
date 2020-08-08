@@ -49,6 +49,10 @@ Route::get('/admin/HallOfFame', 'HallOfFameController@Index');
 //Salary
 Route::get('/admin/Salary', 'SalaryController@Index');
 
+//Baseball Allstars routes
+Route::get('/AllStar','AllStarController@AllStarStore');
+
+// Route::get('/AllStar/{id}','AllStarController@AllStarDetails');
 
 
 Route::get('/mongodb',function(){

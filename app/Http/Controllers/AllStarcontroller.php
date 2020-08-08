@@ -80,4 +80,16 @@ class AllStarController extends Controller
         if ($insertOneResult->getInsertedCount() == 1)
         return redirect('/admin/AllStar')->with('mssg', request('playerID')." was added succesfuly!")-> with('alerttype', "success");
     }
+
+    public function AllStarStore(){
+        $collection =(new MongoDB\Client)->Baseball->AllStar;
+        $AllStar = $collection->find();
+        return view('AllStar.index', [ "AllStar" => $AllStar]);
+       }
+
+    //    public function AllStarDetails($id){//Details
+    //     $collection = (new MongoDB\Client)->Baseball->AllStar;
+    //     $AllStar = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
+    // return view ('AllStar.details', [ "AllStar" => $AllStar ]);
+    // }
 }
