@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/AllStar/Index">AllStar</a>
+                    <a href="{{route ('AllStarStore') }}">AllStar</a>
                 </div>
             </div>
         </div>

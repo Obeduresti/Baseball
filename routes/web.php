@@ -45,14 +45,16 @@ Route::get('/admin/AwardPlayers', 'AwardPlayersController@Index');
 //Hall of fame
 Route::get('/admin/HallOfFame', 'HallOfFameController@Index');
 
-
 //Salary
 Route::get('/admin/Salary', 'SalaryController@Index');
 
-//Baseball Allstars routes
-Route::get('/AllStar','AllStarController@AllStarStore');
 
-// Route::get('/AllStar/{id}','AllStarController@AllStarDetails');
+//Client views
+//Baseball Allstars routes
+
+Route::get('/AllStar','AllStarController@AllStarStore')->name('AllStarStore');
+
+Route::get('/AllStar/{id}','AllStarController@AllStarDetails')->name('AllStarDetails');
 
 
 Route::get('/mongodb',function(){

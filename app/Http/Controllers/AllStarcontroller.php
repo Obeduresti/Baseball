@@ -83,13 +83,15 @@ class AllStarController extends Controller
 
     public function AllStarStore(){
         $collection =(new MongoDB\Client)->Baseball->AllStar;
-        $AllStar = $collection->find();
-        return view('AllStar.index', [ "AllStar" => $AllStar]);
+        $AllStarCount = $collection->count();
+        $page = request("pg") == 0 ? 1 : request("pg");
+        $AllStar = $collection->find([], [ "limit" => 12, "skip" => ($page - 1) * 12 ]); 
+        return view('AllStar.index', [ "AllStar" => $AllStar, 'AllStarCount'=>$AllStarCount]);
        }
 
-    //    public function AllStarDetails($id){//Details
-    //     $collection = (new MongoDB\Client)->Baseball->AllStar;
-    //     $AllStar = $collection->findOne(["_id" => new \MongoDB\BSON\ObjectId($id) ]);
-    // return view ('AllStar.details', [ "AllStar" => $AllStar ]);
-    // }
+       public function AllStarDetails($id){
+        $collection = (new MongoDB\Client)->Baseball->AllStar;
+        $AllStar = $collection->findOne([ "_id"=> new MongoDB\BSON\ObjectId($id) ]);
+        return view("AllStar.details", ["AllStar" => $AllStar]);
+       }
 }
