@@ -9,7 +9,6 @@
                         <p class="card-text"><b>Year: </b> {{$AllStar->yearID}}</p>
                          <p class="card-text"><b>Game: </b> {{$AllStar->gameID}}</p>
                          <p class="card-text"><b>League: </b> {{$AllStar->lgID}}</p>
-                         <p class="card-text"><b>Rating:</b> {{ $AllStar->rating}}</p>
                  </div>
                  <div id="starRating" class="card-footer">
                     <p>Rating: </p>
@@ -29,7 +28,7 @@
                         <i class="far fa-star" onclick="setStarRating(10)" onmouseleave="starRating(document.getElementById('ratingval').value);" onmouseover="starRating(10);"></i>
                     </span>
                     @php
-                        $rating = (array)$AllStar->ratingg;
+                        $rating = (array)$AllStar->rating;
                         if (count($rating) == 0)
                             $avg = 0;
                         else
@@ -42,25 +41,25 @@
         </div>
     </div>
     <script>
-                            function starRating(ratingg) {
+                            function starRating(rating) {
                                 var elStars = document.getElementById("starRating").getElementsByTagName("i");
                                 for (var i = 0; i < elStars.length; i++) {
                                     elStars[i].setAttribute("class", "far fa-star");
                                 }
-                                for (i = 1; i <= Math.ceil(ratingg/2); i++){
+                                for (i = 1; i <= Math.ceil(rating/2); i++){
                                     let elStar = elStars[i - 1];
-                                    if (i == Math.ceil(ratingg/2) && ratingg % 2 == 1){
+                                    if (i == Math.ceil(rating/2) && rating % 2 == 1){
                                         elStar.setAttribute("class", "fas fa-star-half-alt")
                                     } else {
                                         elStar.setAttribute("class", "fas fa-star")
                                     }
                                 }
                             }
-                            function setStarRating(ratingg){
-                                const gamesID = "{{ $games->_id }}"
+                            function setStarRating(rating){
+                                const AllStarID = "{{ $AllStar->_id }}"
                                 var formData = {
-                                    id: gamesID,
-                                    ratingg: ratingg
+                                    id: AllStarID,
+                                    rating: rating
                                 }
                                 axios.post("/api/rating",formData)
                                     .then(function (response) {
