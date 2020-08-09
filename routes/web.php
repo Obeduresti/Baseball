@@ -56,6 +56,11 @@ Route::get('/AllStar','AllStarController@AllStarStore')->name('AllStarStore');
 
 Route::get('/AllStar/{id}','AllStarController@AllStarDetails')->name('AllStarDetails');
 
+//Awardplayers
+Route::get('/AwardPlayers','AwardPlayersController@AwardPlayersStore')->name('AwardPlayersStore');
+
+Route::get('/AwardPlayers/{id}','AwardPlayersController@AwardPlayersDetails')->name('AwardPlayersDetails');
+
 
 Route::get('/mongodb',function(){
     return view('mongodb');

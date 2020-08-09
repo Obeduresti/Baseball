@@ -27,7 +27,7 @@
                         <label for="lgID">League</label>
                         <input type="text" class="form-control" name="lgID" id="lgID" value="{{$AllStar->lgID}}">
                     </div>
-                 
+                    <a href="/admin/AllStar/" class="btn btn-secondary btn-md active" role="button" aria-pressed="true">Back</a>
                     <button class="btn btn-primary"type="submit">edit</button>
                 </form>
             </div>

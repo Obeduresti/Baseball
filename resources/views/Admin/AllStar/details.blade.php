@@ -27,9 +27,10 @@
                         </p>
                     </div>
                     <div class="card-body">
-                        <a href="/admin/AllStar/edit/{{$als ->_id}" class="card-link">Edit</a>
-                        <a href="/admin/AllStar/delete/{{$als->_id}" class="card-link">Delete</a>
-                    </div>
+                        <a href="/admin/AllStar/" class="btn btn-secondary btn-md active" role="button" aria-pressed="true">Back</a>
+                        <a type="button" class="btn btn-secondary" href="/admin/AllStar/edit/{{ $AllStar->_id }}" class="card-link">Edit</a>
+                        <a type="button" class="btn btn-danger" href="/admin/AllStar/delete/{{ $AllStar->_id }}" class="card-link">Delete</a>
+                        </div>
                 </div>
         </div>
     </div>

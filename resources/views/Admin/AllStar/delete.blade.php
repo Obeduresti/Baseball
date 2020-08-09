@@ -7,7 +7,7 @@
                 <h1>Delete player</h1>
                 <form action="/admin/AllStar/delete" method="POST">
                 @csrf
-                @method("DELETE");
+                @method("DELETE")
                     <input type="hidden" name="allstarid"id="allstarid" value="{{$AllStar->_id}}">
                     <div class="form-group">
                         <label for="playerID">Player</label>
@@ -15,41 +15,19 @@
                     </div>             
                     <div class="form-group">
                         <label for="yearID">Year</label>
-                        <textarea class="form-control" name="yearID" id="yearID" cols="30" rows="10" value="{{$AllStar->yearID}}"disable></textarea>
+                        <input type ="text" class="form-control" name="yearID" id="yearID" value="{{$AllStar->yearID}}"disable>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="gameID">Game</label>
-                            <input class= "form-control" type="number" name="gameID" id="gameID" value="{{$AllStar->gameID}}" disable>
-                        </div>                    
-                    </div>                 
-                    <button class="btn btn-default"type="submit">Cancel</button>
-                    <!-- <button class="btn btn-danger"type="submit">Delete</button> -->
-                    <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#MdlDeleteConfirmation">
-                        Delete
-                        </button>
+                    <div class="form-group">
+                        <label for="gameID">Game</label>
+                        <input type ="text" class="form-control" name="gameID" id="gameID" value="{{$AllStar->gameID}}"disable>
+                    </div>   
+                    <div class="form-group">
+                        <label for="lgID">League</label>
+                        <input type ="text" class="form-control" name="lgID" id="lgID" value="{{$AllStar->lgID}}"disable>
+                    </div>        
+                    <a href="/admin/AllStar/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Cancel</a>
+                    <button type="submit" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</button>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="MdlDeleteConfirmation" tabindex="-1" role="dialog" aria-labelledby="MdlDeleteConfirmationLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="MdlDeleteConfirmationLabel">Delete Product</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Are you sure you want to delete this AllStar? This changes can not be reverted.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
                 </form>
             </div>
         </div>
