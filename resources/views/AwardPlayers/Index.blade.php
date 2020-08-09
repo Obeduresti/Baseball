@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>AwardPlayers</h1>
+                <h1>Award Players</h1>
 
                 <div class="row">
                 @foreach($AwardPlayers as $AwardPlayers)

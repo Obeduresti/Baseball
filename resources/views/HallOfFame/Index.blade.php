@@ -4,15 +4,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>All Star</h1>
+                <h1>Hall Of Fame</h1>
 
                 <div class="row">
-                @foreach($AllStar as $AllStar)
+                @foreach($HallOfFame as $HallOfFame)
                  <div class="card col-md-3">
                     <div class="card-body">
-                        <h5 class="card-title">{{$AllStar->playerID}}</h5>
-                        <p class="card-text">{{$AllStar->yearID }}</p>
-                        <a href="/AllStar/{{ $AllStar->_id }}" class="btn btn-primary">View</a>
+                        <h5 class="card-title">{{$HallOfFame->playerID}}</h5>
+                        <p class="card-text">{{$HallOfFame->yearID }}</p>
+                        <a href="/HallOfFame/{{ $HallOfFame->_id }}" class="btn btn-primary">View</a>
                     </div>
                   </div>
                     @endforeach
@@ -22,11 +22,11 @@
                                 @php
                                     $cpage = request('pg') == 0 ? 1 : request('pg');
                                 @endphp                                
-                                <a href="/AllStar?pg={{$cpage - 1}}" class="btn btn-secondary { $cpage == 1 ? 'disabled' : '' }">&lt</a>
-                                @for ($i = 1; $i <= ceil($AllStarCount/12); $i++)
-                                <a href="/AllStar?pg={{$i}}"  class="btn btn-secondary {{ $cpage == $i ? 'disabled' : '' }}">{{$i}} </a>
+                                <a href="/HallOfFame?pg={{$cpage - 1}}" class="btn btn-secondary { $cpage == 1 ? 'disabled' : '' }">&lt</a>
+                                @for ($i = 1; $i <= ceil($HallOfFameCount/12); $i++)
+                                <a href="/HallOfFame?pg={{$i}}"  class="btn btn-secondary {{ $cpage == $i ? 'disabled' : '' }}">{{$i}} </a>
                                 @endfor
-                                <a href="/AllStar?pg={{$cpage + 1}}" class="btn btn-secondary {{ $cpage == ceil($AllStarCount/12) ? 'disabled' : '' }}">&gt</a>
+                                <a href="/HallOfFame?pg={{$cpage + 1}}" class="btn btn-secondary {{ $cpage == ceil($HallOfFameCount/12) ? 'disabled' : '' }}">&gt</a>
                             </div>
                         </div>
                     </div>

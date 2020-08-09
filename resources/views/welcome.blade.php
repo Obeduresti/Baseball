@@ -85,8 +85,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route ('AllStarStore') }}">AllStar</a>
-                    <a href="{{route ('AwardPlayersStore') }}">Awardlayers</a>
+                    <a href="{{route ('AllStarStore') }}">All star</a>
+                    <a href="{{route ('AwardPlayersStore') }}">Award players</a>
+                    <a href="{{route ('HallOfFameStore') }}">Hall of fame</a>
                 </div>
             </div>
         </div>

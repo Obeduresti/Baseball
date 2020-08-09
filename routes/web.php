@@ -61,6 +61,10 @@ Route::get('/AwardPlayers','AwardPlayersController@AwardPlayersStore')->name('Aw
 
 Route::get('/AwardPlayers/{id}','AwardPlayersController@AwardPlayersDetails')->name('AwardPlayersDetails');
 
+//HallOfFame
+Route::get('/HallOfFame','HallOfFameController@AwardPlayersStore')->name('HallOfFameStore');
+
+Route::get('/HallOfFame/{id}','HallOfFameController@AwardPlayersDetails')->name('HallOfFameDetails');
 
 Route::get('/mongodb',function(){
     return view('mongodb');
